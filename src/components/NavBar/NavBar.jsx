@@ -7,16 +7,17 @@ const NavBar = ({ onSearchChange }) => {
   const { wishlist } = useWishlist();
 
   return (
-    <div className={styles.navBar}>
-      <div className={styles.navLinks}>
-        <Link to="/" className={styles.link}> Home </Link>
-        <Link to="/wishlist" className={styles.link}>
-          Wishlist ({wishlist.length})
+    <nav className={styles.navBar}>
+      <div className={styles.leftSection}>
+        <Link to="/" className={styles.navLink}> Home </Link>
+        <Link to="/wishlist" className={styles.navLink}> Wishlist {wishlist.length > 0 && <span className={styles.badge}>{wishlist.length}</span>}
         </Link>
       </div>
 
-      <SearchField onInputChange={onSearchChange} />  
+      <div className={styles.rightSection}>
+        <SearchField onInputChange={onSearchChange} />  
     </div>
+    </nav>
   );
 };
 
