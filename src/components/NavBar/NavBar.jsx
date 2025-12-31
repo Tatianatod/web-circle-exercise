@@ -1,9 +1,10 @@
 import styles from "./NavBar.module.css";
+import SearchField from "../SearchField/SearchField"; 
 
-const NavBar = ({ children }) => {
+const NavBar = ({ onSearchChange }) => {
   return (
     <div className={styles.navBar}>
-      <div className={styles.navBarContentWrapper}>{children}</div>
+      <SearchField onInputChange={onSearchChange} />  
     </div>
   );
 };

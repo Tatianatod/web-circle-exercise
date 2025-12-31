@@ -1,12 +1,13 @@
 import styles from "./SearchField.module.css";
 
-const SearchField = () => {
+const SearchField = ( { onInputChange }) => {
   
   return (
     <div className={styles.wrapper}>
       <input
         placeholder="Filter dishes..."
-        type="text"     
+        type="text"
+        onChange ={(e) => onInputChange(e.target.value)}    
       />
     </div>
   );
